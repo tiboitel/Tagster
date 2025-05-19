@@ -1,0 +1,13 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: python-version: "3.9"
+      - run: pip install ., pytest, flake8
+      - run: flake8 lora_tagger
+      - run: pytest --maxfail=1 --disable-warnings -q
+

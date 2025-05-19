@@ -1,0 +1,2 @@
+[console_scripts]
+lora-tagger = src.cli:main

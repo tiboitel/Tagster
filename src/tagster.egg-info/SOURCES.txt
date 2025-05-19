@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/cli.py
+src/tagster.egg-info/PKG-INFO
+src/tagster.egg-info/SOURCES.txt
+src/tagster.egg-info/dependency_links.txt
+src/tagster.egg-info/entry_points.txt
+src/tagster.egg-info/requires.txt
+src/tagster.egg-info/top_level.txt

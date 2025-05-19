@@ -1,0 +1,16 @@
+[project]
+name = "tagster"
+version = "0.1.0"
+description = "Minimal CLI to auto-tag images via clip-interrogator"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = [
+  "clip-interrogator>=0.4.0",
+  "Pillow",
+  "tqdm",
+  "click"
+]
+[project.scripts]
+lora-tagger = "src.cli:main"
+
