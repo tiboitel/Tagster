@@ -1,4 +1,8 @@
-# tagster/cli.py
+# src/tagster/cli.py
+import multiprocessing as mp
+
+if __name__ == "__main__":
+    mp.set_start_method("spawn", force=True)
 
 import click
 from tagster.core import tag_images, save_results
