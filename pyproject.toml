@@ -1,9 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "tagster"
 version = "0.1.0"
-description = "Minimal CLI to auto-tag images via clip-interrogator"
-readme = "README.md"
-license = "MIT"
 requires-python = ">=3.8"
 dependencies = [
   "clip-interrogator>=0.4.0",
@@ -12,9 +13,13 @@ dependencies = [
   "click",
   "pandas"
 ]
-[project.scripts]
-tagster = "src.cli:main"
+readme = "README.md"
+license = "MIT"
 
-[tool.setuptools]
-package-dir= {"" = "src"}
+[project.scripts]
+tagster = "tagster.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["tagster*"]
 
