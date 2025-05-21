@@ -9,8 +9,12 @@ dependencies = [
   "clip-interrogator>=0.4.0",
   "Pillow",
   "tqdm",
-  "click"
+  "click",
+  "pandas"
 ]
 [project.scripts]
-lora-tagger = "src.cli:main"
+tagster = "src.cli:main"
+
+[tool.setuptools]
+package-dir= {"" = "src"}
 
