@@ -5,7 +5,7 @@ from PIL import Image
 import pandas as pd
 from clip_interrogator import Config, Interrogator
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import torch
+
 
 def tag_images_in_batch(ci, image_files):
     """
@@ -24,6 +24,7 @@ def tag_images_in_batch(ci, image_files):
         prompt = ci.interrogate(img)
         results.append({"image": fp, "tags": prompt})
     return results
+
 
 def tag_images(path, batch_size=8):
     """
@@ -63,6 +64,7 @@ def tag_images(path, batch_size=8):
 
     return results
 
+
 def save_results(results, output, fmt="csv"):
     """
     Saves the tagging results to a file.
@@ -77,4 +79,3 @@ def save_results(results, output, fmt="csv"):
         df.to_json(output, orient="records", lines=True)
     else:
         df.to_csv(output, index=False)
-
